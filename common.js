@@ -42,7 +42,7 @@ Ut.search_wechat = function (public_num, callback) {
         var wechat_num = $($("#sogou_vr_11002301_box_0 a")[0]).attr('href') || '';
         setTimeout(function () {
             callback(null, wechat_num.replace(/amp;/g, ''));
-        }, 3000 + Math.ceil(Math.random() * 500));
+        }, 10*1000 + Math.ceil(Math.random() * 500));
     })
 };
 
@@ -112,7 +112,7 @@ Ut.look_wechat_by_url = function (url, callback) {
             if (err) return callback(err);
             setTimeout(function () {
                 callback(null, article_titles, article_urls, article_pub_times);
-            }, 3000 + Math.ceil(Math.random() * 500));
+            }, 10*1000 + Math.ceil(Math.random() * 500));
         })
     })
 };
@@ -160,7 +160,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
 
                             setTimeout(function () {
                                 callback(null, article_url);
-                            }, 3000 + Math.ceil(Math.random() * 500));
+                            }, 10*1000 + Math.ceil(Math.random() * 500));
 
                         })
                     })
@@ -184,7 +184,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             article_object.like_num = data.like_num;
                             setTimeout(function () {
                                 callback(null, article_url);
-                            }, 3000 + Math.ceil(Math.random() * 500));
+                            }, 10*1000 + Math.ceil(Math.random() * 500));
 
                         })
                     })
@@ -204,7 +204,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             }
                             setTimeout(function () {
                                 callback(null);
-                            }, 3000 + Math.ceil(Math.random() * 500));
+                            }, 10*1000 + Math.ceil(Math.random() * 500));
 
                         });
                     })
@@ -213,7 +213,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                         articles.push(article_object);
                         setTimeout(function () {
                             callback(null);
-                        }, 3000 + Math.ceil(Math.random() * 500));
+                        }, 10*1000 + Math.ceil(Math.random() * 500));
                     })
 
                 })
