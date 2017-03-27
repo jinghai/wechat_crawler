@@ -155,8 +155,8 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             article_object.wechat_number = wechat_number;
                             article_object.title = article_titles[index].replace(/amp;/g, '').replace(/&quot;/g, '"');
                             article_object.url = article_urls[index];
-                            article_object.contentText = $('$page-content').text();
-                            article_object.contentHtml = $('$page-content').html();
+                            article_object.contentText = $('#page-content').text();
+                            article_object.contentHtml = $('#page-content').html();
 
                             setTimeout(function () {
                                 callback(null, article_url);
