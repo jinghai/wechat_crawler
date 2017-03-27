@@ -3,6 +3,27 @@ var async = require('async');
 var cheerio = require('cheerio');
 var Ut = {};
 
+//request.debug = true;
+
+var FileCookieStore = require("tough-cookie-filestore");
+var jar = request.jar(new FileCookieStore("./cookie.json"));
+var headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:50.0) Gecko/20100101 Firefox/50.0',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+    //'Accept-Encoding': 'gzip, deflate',
+    'Accept-Encoding': 'gzip',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+}
+var request = request.defaults({
+    headers:headers,
+    jar: jar,
+    gzip:true,
+    /*proxy:'http://proxy.dc.lan:1234',*/
+    /*encoding : null,*/
+});
+
 /**
  根据微信号搜索公众号,并获取搜素到的第一个公众号链接
  @param {string} public_num 微信号
@@ -15,7 +36,7 @@ Ut.search_wechat = function (public_num, callback) {
     request(url, function (err, response, html) {
         if (err) return callback(err, null);
         if (html.indexOf('<title>302 Found</title>') != -1) return callback(null, '302');
-        if (html.indexOf('您的访问过于频繁') != -1) return callback('-访问过于频繁')
+        if (html.indexOf('您的访问过于频繁') != -1) return callback('-访问过于频繁');
         var $ = cheerio.load(html);
         //公众号页面的临时url
         var wechat_num = $($("#sogou_vr_11002301_box_0 a")[0]).attr('href') || '';
