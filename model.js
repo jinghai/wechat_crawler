@@ -56,7 +56,7 @@ function saveDatas(dataList) {
         });
     });
     async.waterfall(task, function (err, result) {
-        //console.log('complete');
+        console.log('complete');
     });
 }
 
