@@ -184,7 +184,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             article_object.like_num = data.like_num;
                             setTimeout(function () {
                                 callback(null, article_url);
-                            }, 10*1000 + Math.ceil(Math.random() * 500));
+                            }, 500 + Math.ceil(Math.random() * 500));
 
                         })
                     })
@@ -204,7 +204,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             }
                             setTimeout(function () {
                                 callback(null);
-                            }, 10*1000 + Math.ceil(Math.random() * 500));
+                            }, 500 + Math.ceil(Math.random() * 500));
 
                         });
                     })
