@@ -6,3 +6,5 @@
 2.app.js 中keyworld所指定的公众号一定要能够出现在搜素结果中的第一位。
 
 3.MongoDB的ip在model.js中配置
+
+4.数据结构参见model.js中schema的定义
