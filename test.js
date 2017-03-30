@@ -29,7 +29,7 @@ async.whilst(
         async.waterfall(task, function (err, result) {
             if (err) {
                 console.error(err);
-                //process.exit(0);
+                process.exit(0);
             }
             setTimeout(function(){
                 cb();
