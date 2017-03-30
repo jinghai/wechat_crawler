@@ -134,7 +134,7 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                 task1.push(function (callback) {
                     var article_object = {
                         title: '', url: '', read_num: '', like_num: '',
-                        release_time: '', author: '', wechat_number: '',
+                        release_time: '', /*author: '',*/ wechat_number: '',
                         contentHtml: '', contentText: '',
                     }
                     var task2 = [];
@@ -147,11 +147,11 @@ Ut.get_info_by_url = function (article_titles, article_urls, article_pub_times, 
                             //发布日期
                             var release_time = $("#post-date").text();
                             //作者
-                            var author = $($(".rich_media_meta_list em")[1]).text();
+                            //var author = $(".rich_media_meta_list span").text();
                             //公众号
                             var wechat_number = $("#post-user").text();
                             article_object.release_time = release_time;
-                            article_object.author = author;
+                            //article_object.author = author;
                             article_object.wechat_number = wechat_number;
                             article_object.title = article_titles[index].replace(/amp;/g, '').replace(/&quot;/g, '"');
                             article_object.url = article_urls[index];
