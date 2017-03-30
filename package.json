@@ -16,6 +16,7 @@
   "dependencies": {
     "async": "^2.1.4",
     "cheerio": "^0.22.0",
+    "crypto": "0.0.3",
     "mongoose": "^4.9.2",
     "request": "^2.81.0",
     "tough-cookie-filestore": "0.0.1"
